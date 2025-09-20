@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -46,6 +47,29 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        metro: {
+          teal: "hsl(var(--metro-teal))",
+          "teal-light": "hsl(var(--metro-teal-light))",
+          blue: "hsl(var(--metro-blue))",
+          "blue-dark": "hsl(var(--metro-blue-dark))",
+          gray: "hsl(var(--metro-gray))",
+          green: "hsl(var(--metro-green))",
+          orange: "hsl(var(--metro-orange))",
+        },
+        status: {
+          active: "hsl(var(--status-active))",
+          pending: "hsl(var(--status-pending))",
+          maintenance: "hsl(var(--status-maintenance))",
+          standby: "hsl(var(--status-standby))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

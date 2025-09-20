@@ -1,13 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Layout from "@/components/Layout";
+import Dashboard from "./Dashboard";
+import CleanerApp from "./CleanerApp";
+import MechanicApp from "./MechanicApp";
+import DepotView from "./DepotView";
+import BrandingDashboard from "./BrandingDashboard";
 
 const Index = () => {
+  const [currentView, setCurrentView] = useState("dashboard");
+
+  const renderCurrentView = () => {
+    switch (currentView) {
+      case "dashboard":
+        return <Dashboard />;
+      case "cleaner":
+        return <CleanerApp />;
+      case "mechanic":
+        return <MechanicApp />;
+      case "depot":
+        return <DepotView />;
+      case "branding":
+        return <BrandingDashboard />;
+      default:
+        return <Dashboard />;
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout currentView={currentView} onViewChange={setCurrentView}>
+      {renderCurrentView()}
+    </Layout>
   );
 };
 
