@@ -5,6 +5,10 @@ import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TrainStatusCard from "@/components/TrainStatusCard";
 import AIInsightsPanel from "@/components/AIInsightsPanel";
+import AIInductionPlanning from "@/components/AIInductionPlanning";
+import WhatIfSimulation from "@/components/WhatIfSimulation";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { trainFleet } from "@/data/syntheticData";
 import { 
   Train, 
   Users, 
@@ -31,6 +35,7 @@ import {
 } from "lucide-react";
 
 const Dashboard = () => {
+  const { t } = useLanguage();
   const stats = [
     {
       title: "Total Trains",
@@ -355,7 +360,9 @@ const Dashboard = () => {
           </Card>
         </TabsContent>
 
-        <TabsContent value="ai-insights">
+        <TabsContent value="ai-insights" className="space-y-6">
+          <AIInductionPlanning />
+          <WhatIfSimulation />
           <AIInsightsPanel />
         </TabsContent>
       </Tabs>
